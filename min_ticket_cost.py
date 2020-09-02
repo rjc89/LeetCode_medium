@@ -18,4 +18,4 @@ class Solution:
                                         dp_cost[ max(day_i - 30, 0) ] + costs[ _30day_pass ]     ) 
         return dp_cost[365]                                                         # Cost on last day of this year is the answer
 s = Solution()
-print(s.mincostTickets(days = [1,4,6,7,8,20], costs = [2,7,15]))
+print(s.mincostTickets(days = [1,2,3,4,5,6,7,8,9,10,30,31], costs = [2,7,15]))
