@@ -1,3 +1,5 @@
+#https://leetcode.com/problems/letter-tile-possibilities/discuss/?currentPage=1&orderBy=most_votes&query=&tag=python-3
+
 class Solution:
     def numTilePossibilities(self, tiles: str) -> int:
         res=set()
