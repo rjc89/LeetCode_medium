@@ -9,9 +9,27 @@ class TreeNode:
         self.right = right
 class Solution:
     def findMode(self, root: TreeNode) -> List[int]:
-        
-        return mode
+        stack,letter,res = [],{},[]
+        if not root:
+            return []
+        while stack or root:
+            if root:
+                stack.append(root)
+                root = root.left
+            else:
+                root = stack.pop()
+                if root.val not in letter:
+                    letter[root.val] = 1
+                else:
+                    letter[root.val] += 1
+                root = root.right
+        max_val=max(letter.values())
+        result=[] 
+        for key in letter.keys(): 
+            if letter[key]==max_val: 
+                result.append(key) 
+        return result
 
 s = Solution()
-print(s.findMode([1,null,2,2]))
+print(s.findMode(TreeNode([1,None,2,2])))
         
