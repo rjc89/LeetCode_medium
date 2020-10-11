@@ -1,7 +1,8 @@
 # Definition for a binary tree node.
-
 # https://leetcode.com/problems/find-mode-in-binary-search-tree/
 from typing import List
+import collections
+
 class TreeNode:
     def __init__(self, val=0, left=None, right=None):
         self.val = val
@@ -9,27 +10,23 @@ class TreeNode:
         self.right = right
 class Solution:
     def findMode(self, root: TreeNode) -> List[int]:
-        stack,letter,res = [],{},[]
-        if not root:
-            return []
-        while stack or root:
-            if root:
-                stack.append(root)
-                root = root.left
-            else:
-                root = stack.pop()
-                if root.val not in letter:
-                    letter[root.val] = 1
-                else:
-                    letter[root.val] += 1
-                root = root.right
-        max_val=max(letter.values())
-        result=[] 
-        for key in letter.keys(): 
-            if letter[key]==max_val: 
-                result.append(key) 
-        return result
+        
+        cnts = collections.Counter()
+        mv = 0
+        
+        def helper(node):
+            nonlocal mv
+            if not node:
+                return
+            cnts[node.val] += 1
+            mv = max(mv, cnts[node.val])
+            helper(node.left)
+            helper(node.right)
+            
+        helper(root)
+        return [k for k,v in cnts.items() if v == mv]
 
 s = Solution()
-print(s.findMode(TreeNode([1,None,2,2])))
+print(s.findMode([1,None,2,2]))
+
         
