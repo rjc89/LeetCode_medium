@@ -10,7 +10,6 @@ class TreeNode:
         self.right = right
 class Solution:
     def findMode(self, root: TreeNode) -> List[int]:
-        
         cnts = collections.Counter()
         mv = 0
         
@@ -21,12 +20,9 @@ class Solution:
             cnts[node.val] += 1
             mv = max(mv, cnts[node.val])
             helper(node.left)
-            helper(node.right)
-            
+            helper(node.right)  
         helper(root)
         return [k for k,v in cnts.items() if v == mv]
 
 s = Solution()
 print(s.findMode([1,None,2,2]))
-
-        
