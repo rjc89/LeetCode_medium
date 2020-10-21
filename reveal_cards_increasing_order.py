@@ -5,13 +5,18 @@ class Solution:
         sorted_deck = sorted(deck)
         mid = -(-len(deck) // 2)
         #first_idx = mid -1
-        answer = deck[:mid]
-        for i in range(mid, (len(deck)), 1):
-            for j, k in enumerate(answer):
-                answer[j+1] == deck[i]
-
-
-        return sorted_deck, mid
+        main_chunk = deck[:mid]
+        endpiece = deck[mid:]
+        answer = []
+        idx = 0
+        for i in range(len(deck)):
+            if i % 2 == 0:
+                answer[i] = main_chunk[idx]
+                idx += 1
+            else:
+                answer[i] = endpiece[idx]
+                idx += 1
+        return answer
 
 
 s = Solution()
