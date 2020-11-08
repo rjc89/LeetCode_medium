@@ -5,10 +5,10 @@ import collections
 class Solution:
     def diagonalSort(self, mat: List[List[int]]) -> List[List[int]]:
         n, m = len(mat), len(mat[0])
-        d = collections.defaultdict(list)  #default dict doesn't throw a KeyError as it has the default factory value for every key that doesn't exist 
+        d = collections.defaultdict(list)  #default dict doesn't throw a KeyError as it has the default factory value for every key that doesn't exist, in this case list 
         for i in range(n):
             for j in range(m):
-                d[i -j].append(mat[i][j])
+                d[i - j].append(mat[i][j])
         for k in d:
             d[k].sort(reverse = 1)
         for i in range(n):
