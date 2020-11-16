@@ -2,20 +2,15 @@
 import numpy as np
 from typing import List
 import collections
+import itertools
 class Solution:
-    def diagonalSort(self, mat: List[List[int]]) -> List[List[int]]:
-        n, m = len(mat), len(mat[0])
-        d = collections.defaultdict(list)  #default dict doesn't throw a KeyError as it has the default factory value for every key that doesn't exist, in this case list 
-        for i in range(n):
-            for j in range(m):
-                d[i - j].append(mat[i][j])
-        for k in d:
-            d[k].sort(reverse = 1)
-        for i in range(n):
-            for j in range(m):
-                mat[i][j] = d[i - j].pop()
-        print(d, mat)
-        return mat
-
+    def diagonalSort(self, G: List[List[int]]) -> List[List[int]]:
+        M, N, D = len(G), len(G[0]), collections.defaultdict(list)
+        for i, j in itertools.product(range(M), range(N)):
+            D[i-j].append(G[i][j])
+        for k in D:
+            D[k].sort(reverse = True)
+        result = [[D[i-j].pop() for j in range(N)] for i in range(M)]
+        return [[D[i-j].pop() for j in range(N)] for i in range(M)]
 s = Solution()
-s.diagonalSort(mat = [[3,3,1,1],[2,2,1,2],[1,1,1,2]])
+s.diagonalSort(G = [[3,3,1,1],[2,2,1,2],[1,1,1,2]])
