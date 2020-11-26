@@ -13,6 +13,17 @@
 #     def dayOfTheWeek(self, d: int, m: int, y: int) -> str:
 #         return date(y,m,d).strftime("%A")
 
+#https://leetcode.com/problems/bulb-switcher-iv/discuss/755871/Python-Greedy-O(n)
+
+# class Solution:
+#     def minFlips(self, target: str) -> int:
+#         count = 0 
+#         flip = '0'
+#         for bulb in target:
+#             if bulb != flip:
+#                 count += 1
+#                 flip = '1' if flip == '0' else '0'
+#         return count
 
 # https://leetcode.com/problems/iterator-for-combination/
 from itertools import combinations
