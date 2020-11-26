@@ -5,6 +5,15 @@
 # for i in range(10):
 #     print(i, ~i)
 
+
+#https://leetcode.com/problems/day-of-the-week/discuss/377576/Solution-in-Python-3-(beats-100.0-)-(one-line)
+# from datetime import date
+
+# class Solution:
+#     def dayOfTheWeek(self, d: int, m: int, y: int) -> str:
+#         return date(y,m,d).strftime("%A")
+
+
 # https://leetcode.com/problems/iterator-for-combination/
 from itertools import combinations
 
