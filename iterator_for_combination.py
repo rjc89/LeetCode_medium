@@ -14,6 +14,16 @@
 #         return date(y,m,d).strftime("%A")
 
 #https://leetcode.com/problems/bulb-switcher-iv/discuss/755871/Python-Greedy-O(n)
+# class Solution:
+#     def convertToTitle(self, n: int) -> str:
+#         capitals = [chr(x) for x in range(ord('A'), ord('Z')+1)]
+#         result = []
+#         while n > 0:
+#             result.append(capitals[(n-1)%26])
+#             n = (n -1) // 26
+
+#         result.reverse()
+#         return ''.join(result)
 
 # class Solution:
 #     def minFlips(self, target: str) -> int:
@@ -24,6 +34,10 @@
 #                 count += 1
 #                 flip = '1' if flip == '0' else '0'
 #         return count
+# https://leetcode.com/problems/excel-sheet-column-title/discuss/51404/Python-solution-with-explanation
+
+
+
 
 # https://leetcode.com/problems/iterator-for-combination/
 from itertools import combinations
