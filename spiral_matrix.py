@@ -7,7 +7,7 @@ class Solution:
         
         while matrix:
             result += matrix.pop(0)
-            matrix = (list(zip(*matrix)))[::-1]
+            matrix = (list(zip(*matrix)))[::-1]  # zip(*matrix) unpacks the matrix tuple and passes them as arguments to list but in reverse order because of [::-1]
             
         return result
         
