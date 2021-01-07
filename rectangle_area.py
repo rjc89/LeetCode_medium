@@ -21,4 +21,4 @@ class Solution:
         return area_1 + area_2 - intersection
 
 s = Solution()
-print(s.computeArea(A = -3, B = 0, C = 3, D = 4, E = 0, F = -1, G = 9, H = 2)        )
+print(s.computeArea(A = -3, B = 0, C = 3, D = 4, E = 0, F = -1, G = 9, H = 2))
