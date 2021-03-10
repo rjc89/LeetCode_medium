@@ -1,3 +1,6 @@
+// https://leetcode.com/problems/minimum-subsequence-in-non-increasing-order/discuss/774009/C%2B%2B-O(n)-without-sorting
+
+
 class Solution {
 public:
     vector<int> minSubsequence(vector<int>& nums) {
